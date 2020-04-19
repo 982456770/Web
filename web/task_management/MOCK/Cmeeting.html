@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会议消息</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="../../css/icon.css">
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <script src="../../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../css/client.css">
+    <script src="../../js/Mock.js"></script>
+    <script src="../../js/client_meeting.js"></script>
+</head>
+<body>
+<div id="menu" class="nav">
+    <div class="disabled list-group-item" style="text-align: center">教学管理系统</div>
+    <div class="nav_box nav_active" value="Cmeeting"><i class="iconfont">&#xe630;</i><span>会议</span></div>
+    <div class="nav_box" value="Cinvigilate"><i class="iconfont">&#xe62f;</i><span>监考</span></div>
+    <div class="nav_box" value="Caudit"><i class="iconfont">&#xe63f;</i><span>听课</span></div>
+    <div class="nav_box" value="Cnotice"><i class="iconfont">&#xe615;</i><span>通知</span></div>
+    <div class="nav_box" value="Cother"><i class="iconfont">&#xe62b;</i><span>其他</span></div>
+    <div class="nav_box" value="Cgather"><i class="iconfont">&#xe667;</i><span>汇总</span></div>
+</div>
+
+<div class="container-fluid">
+    <div class="head">
+        <!-- 头部标题 -->
+        <p class="head_title">会议消息</p>
+
+        <div class="head_right">
+            <span>退出</span>
+        </div>
+    </div>
+
+    <!--内容显示-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list basicColor"></span>
+                任务列表
+            </div>
+            
+            
+
+        </div>
+
+    <!-- 隐藏的提交表单 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">任务详情</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="txt_meeting_theme">会议主题</label>
+                        <input type="text" name="txt_meeting_theme" class="form-control" id="txt_meeting_theme"
+                               placeholder="会议主题" readonly="readonly">
+                    </div>
+                    <div class="form-group">
+                        <label for="txt_meeting_place">会议地点</label>
+                        <input type="text" name="txt_meeting_place" class="form-control" id="txt_meeting_place"
+                               placeholder="会议地点" readonly="readonly">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="txt_meeting_participants">参会人员</label>
+                        <input type="text" name="txt_meeting_participants" class="form-control"
+                               id="txt_meeting_participants" placeholder="参会人员" readonly="readonly">
+                    </div> -->
+                    <div class="form-group">
+                        <label for="txt_meeting_content">会议内容</label>
+                        <textarea type="text" name="txt_meeting_content" class="form-control" id="txt_meeting_content"
+                               placeholder="会议内容" readonly="readonly">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt_meeting_time">时间</label>
+                        <input type="text" name="txt_meeting_time" class="form-control" id="txt_meeting_time"
+                               placeholder="时间" readonly="readonly">
+                    </div>
+                    <div class="form-group">
+                        <label for="txt_meeting_desc">描述/其他</label>
+                        <input type="text" name="txt_meeting_desc" class="form-control" id="txt_meeting_desc"
+                               placeholder="描述/其他" readonly="readonly">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
