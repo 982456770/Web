@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>前段模拟假数据</title>
+</head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="Mock.js"></script>
+<body>
+	<a href="javascript:;">13</a>
+
+
+<script type="text/javascript">
+	Mock.mock(
+        'http://mockjs', {
+            "userName": '@name', //模拟名称
+            "age|1-100": 100, //模拟年龄(1-100)
+            "color": "@color", //模拟色值
+            "date": "@date('yyyy-MM-dd HH:mm:ss')", //模拟时间
+            "url": "@url()", //模拟url
+            "content": "@cparagraph()" //模拟文本
+        });
+
+ 	Mock.mock("sendName", {
+ 		"people|5-9": [
+ 		{
+ 			"userName|+1":[
+ 				"Jelly",
+ 				"Kiloto",
+ 				"Allice"
+ 			],
+ 			"age|10-20":10,
+ 			"country|+1":[
+ 				"America",
+ 				"France",
+ 				"China",
+ 				"Japan"
+ 			],
+ 			"personalDescrible":"@paragraph",
+ 			"CuserName":"@csentence"
+ 		}
+ 	]
+ })
+
+ 	$("a").on("click", function(){
+ 		$.ajax({
+			type: "get",
+			dataType: "JSON",
+			async: "true",
+			url: "http://mockjs",
+
+			success: function(response){
+				console.log(response);
+			},
+			error: function(xhr){
+				alert("error")
+			},
+			complete: function(){
+
+			}
+ 	})
+ 	})
+
+
+
+		$.ajax({
+			type: "get",
+			dataType: "text",
+			async: "true",
+			url: "sendName",
+
+			success: function(response){
+				var res = JSON.parse(response);
+				console.log(res);
+			},
+			error: function(xhr){
+				alert("error")
+			},
+			complete: function(){
+
+			}
+		})
+	// })
+</script>
+</body>
+</html>
